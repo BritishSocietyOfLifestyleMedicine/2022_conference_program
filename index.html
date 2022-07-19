@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>BSLM 2022 conference Programme</title>
+    <meta name="description" content="BSLM 2022 conference Programme">
+    <meta name="keywords" content="BSLM 2022 conference Programme">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="banner_content">
+        <div id="sticky_nav" class="nav_title">
+            <nav>
+                <a href="https://bslm.org.uk" class="brand-logo">
+                    <svg class="logo">
+                        <image class="logo" xlink:href="assets/logo.svg" />
+                    </svg>
+                </a>
+                <ul class="nav_links">
+                    <li><a href="https://bslm.org.uk/events/bslm2022/">Conference Info</a></li>
+                    <li><a href="">Virtual Conference Website</a></li>
+                    <li><a href="https://britishsocietyoflifestyemedicine.s3.eu-west-2.amazonaws.com/BSLM+Conference+2022/Sponsorship+details+BSLM+2022.pdf"
+                            target="_blank" rel="noopener noreferrer">Sponsor Signup</a></li>
+                </ul>
+
+            </nav>
+            <div class="banner_title">BSLM 2022 Conference Programme</div>
+        </div>
+        <img class="scroll_icon" src="assets/scroll.png" alt="scroll down">
+        <div class="banner_info_wrapper">
+            <div id="sticky_days" class="button_wrapper">
+                <div id="day_one_btn" onclick="scrollToId('day_one')">Day One</div>
+                <div id="day_two_btn" onclick="scrollToId('day_two')">Day Two</div>
+                <div id="day_three_btn" onclick="scrollToId('day_three')">Day Three</div>
+                <div id="activities_btn" onclick="scrollToId('activities')">Conference Activities</div>
+
+            </div>
+            <div id="banner_info">
+                <div class="banner_location">Tottenham Hotspur</div>
+                <div class="banner_date">September 22-24</div>
+            </div>
+        </div>
+
+    </div>
+    <div class="img_wrapper">
+        <img id="banner_img" src="assets/tempBanner_cropped.jpg" alt="Programme Banner" class="banner_img">
+    </div>
+
+    <div id="dynamicContent" class="container"></div>
+
+
+    <script src="templates.js"></script>
+    <script src="scripts.js"></script>
+    <script src="scrollspy.js"></script>
+
+</body>
+
+</html>

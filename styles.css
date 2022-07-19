@@ -1,0 +1,493 @@
+html {
+    font-size: 15px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*, ::before, ::after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+body {
+    background-color: #c1e8f8;
+    margin: 0;
+    line-height: 1.5;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 
+    'Helvetica Neue', sans-serif;
+}
+
+.container {
+    width: 70%;
+    margin: 90px auto auto auto;
+}
+
+@media all and (max-width: 1100px) {
+    .container {
+        width: 90%;
+    }
+}
+
+@media all and (max-width: 800px) {
+    .container {
+        width: 94%;
+    }
+}
+
+.brand-logo {
+    margin-left: 2vw;
+}
+
+nav {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 100%;
+}
+
+nav ul {
+    margin: 0 5vw 0 0;
+    color: black;
+    list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+nav ul li a {
+    display: flex;
+    color: rgb(70, 70, 70);
+    height: 100%;
+    font-size: 22px;
+    padding: 0 15px;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.5s;
+}
+
+nav ul li a:hover {
+    background-color: rgb(219, 219, 219);
+}
+
+svg {
+    margin-top: 7px;
+}
+
+.logo {
+    width: 400px;
+    height: 85px;
+}
+
+@media all and (max-width: 1050px) {
+    .logo {
+        width: 250px;
+        height: 60px;
+    }
+    nav ul {
+        margin: 0;
+        padding: 0;
+        width: calc(100vw - 300px);
+    }
+    nav ul li {
+        width: 30%;
+    }
+    nav ul li a {
+        font-size: 15px;
+    }
+}
+
+.banner_content {
+    width: 100%;
+    display: flex;
+    flex-flow: nowrap column;
+    position: absolute;
+}
+
+.banner_img {
+    width: 100vw;
+    height: 100vh;
+    overflow-y: hidden;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+}
+
+.img_wrapper {
+    height: 100vh;
+}
+
+.banner_title {
+    display: flex;
+    align-items: center;
+    background-color: rgba(56, 165, 165, 0.5);
+    margin-top: 30px;
+    font-size: 65px;
+    padding-left: 30px;
+    font-weight: 600;
+    color: white;
+}
+
+.nav_title {
+    width: 100%;
+    position: fixed;
+}
+
+.banner_info_wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    position: absolute;
+    width: 100%;
+    margin-top: calc(100vh - 150px);
+}
+
+#banner_info {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    height: 150px;
+    background-color: rgba(56, 165, 165, 0.6);
+    color: white;
+    font-size: 45px;
+    font-weight: 600;
+    padding: 15px;
+    border-radius: 20px 0 0 0;
+}
+
+.button_wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 70%;
+    background-color: rgba(56, 165, 165, 0.6);
+    transition: 0.8s;
+}
+
+.button_wrapper div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 20px;
+    height: 30px;
+    width: 200px;
+    border: 2px solid white;
+    background-color: rgba(56, 165, 165, 0.3);
+    color: white;
+    border-radius: 10px;
+    transition: 0.6s;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.button_wrapper div:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: rgb(56, 165, 165);
+}
+
+.scroll_icon {
+    width: 50px;
+    height: auto;
+    position: absolute;
+    top: calc(100vh - 110px);
+    left: calc(50vw - 100px);
+}
+
+#scrollDownPrompt {
+    width: 150px;
+    height: auto;
+    position: absolute;
+    top: calc(100vh - 120px);
+    left: calc(50vw - 100px);
+    color: white;
+}
+
+@media all and (min-width: 2250px) {
+    .banner_title {
+        font-size: 135px;
+    }
+    .logo {
+        width: 600px;
+        height: 150px;
+    }
+    nav ul li a {
+        font-size: 35px;
+        padding: 0 40px;
+    }
+}
+
+@media all and (min-width: 1800px) {
+    .banner_info_wrapper {
+        margin-top: calc(100vh - 200px);
+    }
+    .banner_title {
+        font-size: 80px;
+    }
+    #banner_info {
+        font-size: 50px;
+        height: 200px;
+    }
+    .button_wrapper {
+        height: 60px;
+    }
+    .button_wrapper div{
+        height: 40px;
+    }
+    .scroll_icon {
+        top: calc(100vh - 150px);
+    }
+}
+
+@media all and (max-width: 1425px) {
+    #banner_info {
+        font-size: 40px;
+    }
+}
+
+@media all and (max-width: 1278px) {
+    #banner_info {
+        font-size: 35px;
+    }
+    .button_wrapper {
+        height: 50px;
+    }
+}
+
+@media all and (max-width: 1018px) {
+    #banner_info {
+        font-size: 30px;
+    }
+}
+
+@media all and (max-width: 888px) {
+    .banner_title {
+        font-size: 50px;
+    }
+    #banner_info {
+        font-size: 28px;
+    }
+    .button_wrapper div {
+        margin: 0 10px;
+    }
+}
+
+@media all and (max-width: 580px) {
+    nav ul {
+        display: none;
+    }
+}
+
+@media all and (max-width: 480px) {
+    .banner_title {
+        font-size: 35px;
+    }
+    #banner_info {
+        font-size: 20px;
+    }
+    .button_wrapper div {
+        display: none;
+    }
+
+    .phone_show_sticky_days div {
+        display: flex;
+    }
+}
+
+.day {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: 35px;
+    justify-content: space-between;
+    padding-top: 50px;
+}
+
+.dayLabel {
+    width: 100vw;
+    font-size: 3rem;
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    background-color: rgba(56, 165, 165, 0.50);
+    margin: 20px 0 20px 0;
+}
+
+.label {
+    font-size: 1.2rem;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.wrap_label_info {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.label_time {
+    margin-right: 20px;
+    min-width: 105px;
+}
+
+.label_name {
+    margin-right: 10px;
+    font-weight: 700;
+}
+
+.labelText {
+    flex-basis: 80%;
+    font-weight: 700;
+}
+
+.intermission {
+    width: 100%;
+    margin: 0 0 20px 0;
+    padding: 10px 10px 10px 20px;
+    background-color: #f8f8f8;
+}
+
+.plenary {
+    width: 100%;
+    min-height: 50px;
+    margin-bottom: 20px;
+    padding: 15px 15px 15px 30px;
+    background-color: #fdfdfd;
+}
+
+.parallel {
+    width: 49%;
+    min-height: 50px;
+    margin-bottom: 20px;
+    /* padding: 2% 2% 2% 2%; */
+    padding: 15px 15px 15px 10px;
+    /* padding: 0.5%; */
+    background-color: white;
+}
+
+@media all and (max-width: 650px) {
+    .parallel {
+        width: 100%;
+    }
+}
+
+.activityDay {
+    width: 32%;
+    min-height: 50px;
+    margin-bottom: 20px;
+    padding: 15px 15px 15px 20px;
+    background-color: #fdfdfd;
+}
+
+@media all and (max-width: 650px) {
+    .activityDay {
+        width: 100%;
+    }
+}
+
+.speaker {
+    display: flex;
+    flex-flow: row wrap;
+    font-size: 1rem;
+    margin: 0 5px 20px 0;
+}
+
+.speakerTime {
+    margin-right: 10px;
+    flex-basis: auto;
+}
+
+.speakerText {
+    flex-basis: 80%;
+}
+
+.speakerTitle {
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #83828273;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+    margin: 10px auto 10px 10px;
+    display: block;
+    width: 90%;
+}
+
+.session {
+    border-radius: 5px;
+    box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.2);
+    background-color: white;
+}
+
+.daySponsor {
+    width: 100%;
+}
+
+.smallSponsorArea {
+    width: 85%;
+    height: 30vh;
+    margin: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    background-color: white;
+
+}
+
+@media all and (max-width: 750px) {
+    .sponsorSession {
+        height: 50vh;
+    }
+}
+
+.sponsorHeading {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-weight: 600;
+    background-color: rgba(56, 165, 165, 0.50);
+}
+
+.sponsorHeading p {
+    font-size: 20px;
+    margin: 3px 0 3px 0;
+    color: white;
+}
+
+.sponsorLogoArea {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    /* overflow: hidden; */
+    width: 100%;
+    height: 100%;
+}
+
+@media all and (max-width: 750px) {
+    .sponsorLogoArea {
+        flex-flow: row wrap;
+        /* align-items: center; */
+    }
+}
+
+.sponsorLogo {
+    cursor: pointer;
+    margin: 20px 2% 20px 2%;
+    object-fit: contain;
+    /* max-height: 20vh; */
+    width:29%;
+}
+@media all and (max-width: 750px) {
+    .sponsorLogo {
+        margin: 5px;
+        max-width: 90%;
+    }
+}
+
+.fullSponsorArea .sponsorLogo {
+    margin: 50px 2%;
+}
