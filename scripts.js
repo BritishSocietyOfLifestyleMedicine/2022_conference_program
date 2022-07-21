@@ -32,13 +32,7 @@ const addElement = (parent, template, csvLine) => {
 
 const filterCsv = csvArray => {
     const removeShortLines = arr => arr.filter(line => line.length > 1);
-    const trimWhiteSpace = arr => {
-        return arr.map(line => {
-            return line.map(item => {
-                return item.trim()
-            })
-        });
-    }
+    const trimWhiteSpace = arr => arr.map(line =>  line.map(item => item.trim()));
     return removeShortLines(trimWhiteSpace(csvArray));
 };
 
@@ -96,7 +90,6 @@ loadCsv();
  * @returns {String} 2D array of lines and cols
  */
 const csvSplit = csvText => {
-    console.log(csvText);
     const csvLines = csvText.split('\n');
     const csvArray = csvLines.map(csvLine => {
         // if no double quotes exist, just return the line split by commas
@@ -186,3 +179,5 @@ const resizeUpdates = () => {
 // window.setTimeout(resizeUpdates, 500);
 // window.setTimeout(resizeUpdates, 1000);
 // window.setTimeout(resizeUpdates, 5000);
+
+
