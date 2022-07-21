@@ -142,13 +142,13 @@ const csvSplit = csvText => {
          * @param {Int} startPos - Index to start after the last tuple
          * @returns 
          */
-        const buildArray = (quoteTuples, accArr = [], startPos = 0) => {
+        const recBuildArray = (quoteTuples, accArr = [], startPos = 0) => {
             if (!quoteTuples.length) return [...accArr, ...unQuotedTextFormat(startPos, csvLine.length, csvLine)];
             const unQuotedText = unQuotedTextFormat(startPos, quoteTuples[0][0], csvLine);
             const quotedText = quotedTextFormat(quoteTuples[0][0], quoteTuples[0][1], csvLine);
-            return buildArray(quoteTuples.slice(1), [...accArr, ...unQuotedText, quotedText], quoteTuples[0][1] + 1)
+            return recBuildArray(quoteTuples.slice(1), [...accArr, ...unQuotedText, quotedText], quoteTuples[0][1] + 1)
         }
-        return buildArray(quoteIndexTuples);
+        return recBuildArray(quoteIndexTuples);
     })
     return csvArray;
 }
