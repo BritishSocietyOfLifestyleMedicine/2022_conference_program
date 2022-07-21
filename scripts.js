@@ -96,7 +96,6 @@ loadCsv();
  * @returns {String} 2D array of lines and cols
  */
 const csvSplit = csvText => {
-    console.log(csvText);
     const csvLines = csvText.split('\n');
     const csvArray = csvLines.map(csvLine => {
         // if no double quotes exist, just return the line split by commas
