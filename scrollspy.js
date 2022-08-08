@@ -11,6 +11,7 @@ const bannerImg = document.getElementById('banner_img');
 const bannerInfo = document.getElementById('banner_info');
 const stickyNav = document.getElementById('sticky_nav');
 const stickyDays = document.getElementById('sticky_days');
+// const sections = document.querySelectorAll('section')
 /**
  * Init other vars
  */
@@ -58,14 +59,14 @@ document.addEventListener('scroll', e => {
      * Get height 
      */
 
-    if(scrollyPos + stickyDays.offsetHeight > windowHeight){
+    if (scrollyPos + stickyDays.offsetHeight > windowHeight) {
         stickyDays.style.left = '0';
         stickyDays.style.position = 'fixed';
         stickyDays.style.top = '0';
         stickyDays.style.width = '100%';
         stickyDays.style.backgroundColor = 'rgba(56, 165, 165, 0.9)';
         stickyDays.classList.add('phone_show_sticky_days');
-    } 
+    }
     else {
         stickyDays.style.position = 'relative';
         stickyDays.style.width = '70%';
@@ -74,9 +75,33 @@ document.addEventListener('scroll', e => {
     }
 });
 
+const addDynamicEventListener = () => {
+    const days = [...document.getElementsByClassName('day')].map(day => ({
+        element: day,
+        topHeight: day.offsetTop,
+        clientHeight: day.clientHeight,
+        buttonElement: document.getElementsByClassName(day.id)[0]
+    }));
+    let previousCurrentDay = '';
+
+    document.addEventListener('scroll', e => {
+        const currentDay = days.find(day => window.scrollY < day.topHeight + day.clientHeight 
+            && window.scrollY > day.topHeight);
+        if ((currentDay !== previousCurrentDay) || currentDay.topHeight !== previousCurrentDay.topHeight) {
+            previousCurrentDay = currentDay;
+            days.forEach(day => {
+                if (day.buttonElement !== undefined) day.buttonElement.classList.remove('active');
+            });
+            if (window.scrollY < days[0].topHeight) days[0].buttonElement.classList.remove('active')
+            if (currentDay !== undefined) currentDay.buttonElement.classList.add('active');
+        }
+    })
+}
+
 
 const scrollToId = id => document.getElementById(id).scrollIntoView({
-    behavior: "smooth", 
-    block: "start", 
+    behavior: "smooth",
+    block: "start",
     inline: "nearest"
 });
+

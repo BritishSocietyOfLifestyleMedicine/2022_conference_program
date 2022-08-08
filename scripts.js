@@ -80,6 +80,7 @@ const loadCsv = async () => {
     const text = await response.text();
     const csvArray = csvSplit(text);
     buildProgramme(csvArray);
+    addDynamicEventListener();
 }
 loadCsv();
 

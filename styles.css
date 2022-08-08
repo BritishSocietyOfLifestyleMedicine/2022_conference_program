@@ -189,6 +189,11 @@ svg {
     color: rgb(56, 165, 165);
 }
 
+.active {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    color: rgb(56, 165, 165) !important;
+}
+
 .scroll_icon {
     width: 50px;
     height: auto;
