@@ -55,12 +55,28 @@ const buildProgramme = csvArray => {
                 return addElement(findLatestElement('day'), sessionTemplate('parallel'), csvLine);
             case 'speaker':
                 return addElement(findLatestElement('session'), speakerTemplate, csvLine);
-            case 'activity area':
-                return addElement(document.getElementById('dynamicContent'), dayTemplate, csvLine);
+        }
+    })
+
+    const activityHeader = filteredCsvArray.find(csvLine => csvLine[1] === 'activity area')
+    addElement(document.getElementById('dynamicContent'), dayTemplate, activityHeader);
+        
+    
+
+    filteredCsvArray.forEach(csvLine => { 
+        switch (csvLine[1]) {
             case 'activity day':
                 return addElement(findLatestElement('day'), activityDayTemplate, csvLine);
             case 'activity':
                 return addElement(findLatestElement('session'), speakerTemplate, csvLine);
+        }
+    })
+
+    
+    filteredCsvArray.forEach(csvLine => {
+        switch (csvLine[1]) {
+            case 'sponsorday':
+                return addElement(document.getElementById('dynamicContent'), dayTemplate, csvLine);
             case 'sponsor logo':
                 return addElement(findLatestElement('sponsorLogoArea'), sponsorLogoTemplate, csvLine);
             case 'small sponsor area':
@@ -69,7 +85,10 @@ const buildProgramme = csvArray => {
                 return addElement(findLatestElement('day'), fullSponsorAreaTemplate, csvLine);
         }
     })
+    
 };
+
+
 
 
 const newTab = url => window.open(url, '_blank').focus();

@@ -30,16 +30,19 @@ const sessionTemplate = className => csvLine => {
 }
 
 
-const speakerTemplate = csvLine =>
-    `<div class="speaker">
+const speakerTemplate = csvLine => {
+    let bookingHTML = (csvLine[6] === '' || csvLine[6] === undefined ) ? "" : `<a class="bluelink" href="${csvLine[6]}">Sign up here</a>`;
+    return `<div class="speaker">
         <div class="speakerTime">
             ${csvLine[3]} - ${csvLine[4]}
         </div>
         <div class="speakerText">
             <b>${csvLine[0]}</b> - ${csvLine[2]}
             <div class="speakerTitle">${csvLine[5]}</div>
+            ${bookingHTML}
         </div>
-    </div>`;
+        
+    </div>`};
 
 
 const activityDayTemplate = csvLine =>

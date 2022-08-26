@@ -9,6 +9,12 @@ html {
     box-sizing: inherit;
 }
 
+.bluelink {
+	color: #4e64da;
+	text-decoration: none !important;
+	font-weight: 500 !important;
+}
+
 body {
     background-color: #c1e8f8;
     margin: 0;
